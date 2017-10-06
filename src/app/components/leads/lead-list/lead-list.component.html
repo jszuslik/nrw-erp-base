@@ -1,3 +1,47 @@
 <div [@routerTransition]>
     <app-page-header [heading]="'Leads'" [icon]="'fa-address-card-o'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <!--<div class="card-header">-->
+                    <!--Basic example-->
+                <!--</div>-->
+                <div class="card-block table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th><i class="fa fa-check" aria-hidden="true"></i></th>
+                            <th>Lead Name</th>
+                            <th>Company</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Lead Source</th>
+                            <th>Lead Owner</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row"><input type="checkbox" /></th>
+                            <td>Joshua Szuslik <small>Id: 1</small></td>
+                            <td>Omni Resources</td>
+                            <td>joshua.szuslik@omniresources.com</td>
+                            <td>(414) 202-3939</td>
+                            <td>Website</td>
+                            <td>Joshua</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox" /></th>
+                            <td>Jacob Thorton <small>Id: 2</small></td>
+                            <td>Lanex, LLC</td>
+                            <td>jacob@lanex.com</td>
+                            <td>(555) 555-5555</td>
+                            <td>Job Site</td>
+                            <td>Joshua</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
