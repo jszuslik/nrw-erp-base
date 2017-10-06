@@ -1,3 +1,15 @@
 .fs-12 {
     font-size: 12px;
 }
+.page-header {
+  padding-left: 5px;
+}
+.row-actions {
+  color: #646464;
+  font-size: 13px;
+  position: relative;
+  left: -9999em;
+}
+tr:hover .row-actions {
+  position: static;
+}

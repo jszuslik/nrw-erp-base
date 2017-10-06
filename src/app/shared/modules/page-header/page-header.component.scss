@@ -1,0 +1,18 @@
+.header-wrap {
+  display: table;
+  margin-bottom: 15px;
+}
+.sub-header-wrap {
+  display: table-cell;
+  vertical-align: middle;
+}
+.bio-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.page-header {
+  margin: 0;
+}

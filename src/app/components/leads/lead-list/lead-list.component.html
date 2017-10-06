@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Leads'" [icon]="'fa-address-card-o'"></app-page-header>
+    <app-page-header [pageheader]="pageheader"></app-page-header>
     <div class="row">
         <div class="col col-xl-12 col-lg-12">
             <div class="card mb-3">
@@ -22,7 +22,14 @@
                         <tbody>
                             <tr *ngFor="let lead of leads">
                                 <th scope="row"><input type="checkbox" /></th>
-                                <td>{{lead.name}} <small>Id: {{lead.id}}</small></td>
+                                <td>
+                                    <strong>{{lead.name}}</strong> <small>Id: {{lead.id}}</small>
+                                    <div class="row-actions">
+                                        <span class="edit">
+                                            <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/leads', lead.id]">View</button>
+                                        </span>
+                                    </div>
+                                </td>
                                 <td>{{lead.company}}</td>
                                 <td>{{lead.email}}</td>
                                 <td>{{lead.phone | phone}}</td>

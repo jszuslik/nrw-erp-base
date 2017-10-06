@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import {PageHeader} from '../../models/shared/page-header';
 
 @Component({
     selector: 'app-charts',
@@ -8,6 +9,20 @@ import { routerTransition } from '../../router.animations';
     animations: [routerTransition()]
 })
 export class ChartsComponent implements OnInit {
+
+    pageheader: PageHeader = {
+        heading: 'Charts',
+        image: '',
+        breadcrumbs: [
+            {
+                title: 'Charts',
+                icon: 'fa-bar-chart-o',
+                link: '',
+                active: true
+            }
+        ]
+    };
+
     // bar chart
     public barChartOptions: any = {
         scaleShowVerticalLines: false,

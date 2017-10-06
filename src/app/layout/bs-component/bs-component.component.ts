@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import {PageHeader} from '../../models/shared/page-header';
 
 @Component({
     selector: 'app-bs-component',
@@ -7,5 +8,25 @@ import { routerTransition } from '../../router.animations';
     styleUrls: ['./bs-component.component.scss'],
     animations: [routerTransition()]
 })
-export class BsComponentComponent {
+export class BsComponentComponent implements OnInit {
+
+    pageheader: PageHeader = {
+        heading: 'Bootstrap Components',
+        image: '',
+        breadcrumbs: [
+            {
+                title: 'Bootstrap Components',
+                icon: 'fa-th-list',
+                link: '',
+                active: true
+            }
+        ]
+    };
+
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
+
 }

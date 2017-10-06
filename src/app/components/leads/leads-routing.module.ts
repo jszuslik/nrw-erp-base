@@ -13,7 +13,7 @@ const routes: Routes = [
                 component: LeadListComponent
             },
             {
-                path: 'single',
+                path: ':id',
                 component: LeadSingleComponent
             }
         ]

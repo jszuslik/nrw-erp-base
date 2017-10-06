@@ -1,3 +1,51 @@
-<p>
-  lead-single works!
-</p>
+<div [@routerTransition]>
+    <app-page-header [pageheader]="pageheader"></app-page-header>
+    <div class="row">
+        <div class="col-12">
+            <table class="lead-info-table">
+                <tbody class="lead-info-table-body">
+                    <tr id="lead-owner" class="lead-info-table-row">
+                        <td class="lead-info-table-cell">
+                            Lead Owner
+                        </td>
+                        <td class="lead-info-table-cell">
+                            {{lead.owner}}
+                        </td>
+                    </tr>
+                    <tr id="lead-email" class="lead-info-table-row">
+                        <td class="lead-info-table-cell">
+                            Email
+                        </td>
+                        <td class="lead-info-table-cell">
+                            {{lead.email}}
+                        </td>
+                    </tr>
+                    <tr id="lead-phone" class="lead-info-table-row">
+                        <td class="lead-info-table-cell">
+                            Phone
+                        </td>
+                        <td class="lead-info-table-cell">
+                            {{lead.phone | phone}}
+                        </td>
+                    </tr>
+                    <tr id="lead-mobile" class="lead-info-table-row">
+                        <td class="lead-info-table-cell">
+                            Mobile
+                        </td>
+                        <td class="lead-info-table-cell">
+                            {{lead.phone | phone}}
+                        </td>
+                    </tr>
+                    <tr id="lead-status" class="lead-info-table-row">
+                        <td class="lead-info-table-cell">
+                            Lead Status
+                        </td>
+                        <td class="lead-info-table-cell">
+                            Active
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

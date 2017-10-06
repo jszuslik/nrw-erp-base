@@ -1,13 +1,26 @@
 <div class="row">
     <div class="col-xl-12">
-        <h2 class="page-header">
-            {{heading}}
-        </h2>
+        <div class="header-wrap">
+            <div class="sub-header-wrap">
+                <div *ngIf="pageheader.image != ''" class="bio-img">
+                    <img class="img-fluid" [src]="pageheader.image" />
+                </div>
+            </div>
+            <div class="sub-header-wrap">
+                <h2 class="page-header" *ngIf="pageheader.heading != ''">
+                    {{pageheader.heading}}
+                </h2>
+            </div>
+        </div>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <i class="fa fa-dashboard"></i> <a href="Javascript:void(0)" [routerLink]="['/dashboard']">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active"><i class="fa {{icon}}"></i> {{heading}}</li>
+            <li *ngFor="let crumb of pageheader.breadcrumbs" class="breadcrumb-item" [class.active]="crumb.active">
+                <i class="fa {{crumb.icon}}"></i>
+                <a *ngIf="!crumb.active" href="Javascript:void(0)" [routerLink]="[crumb.link]">{{crumb.title}}</a>
+                <span *ngIf="crumb.active">{{crumb.title}}</span>
+            </li>
         </ol>
     </div>
 </div>
