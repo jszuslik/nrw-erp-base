@@ -20,9 +20,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr *ngFor="let lead of leads">
                             <th scope="row"><input type="checkbox" /></th>
-                            <td>Joshua Szuslik <small>Id: 1</small></td>
+                            <td>{{lead.name}} <small>Id: 1</small></td>
                             <td>Omni Resources</td>
                             <td>joshua.szuslik@omniresources.com</td>
                             <td>(414) 202-3939</td>

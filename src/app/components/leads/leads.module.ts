@@ -5,6 +5,7 @@ import {LeadListComponent} from './lead-list/lead-list.component';
 import {LeadsComponent} from './leads.component';
 import {LeadsRoutingModule} from './leads-routing.module';
 import {PageHeaderModule} from '../../shared/modules/page-header/page-header.module';
+import {LeadService} from '../../services/leads/lead.service';
 
 @NgModule({
     imports: [
@@ -16,6 +17,9 @@ import {PageHeaderModule} from '../../shared/modules/page-header/page-header.mod
         LeadsComponent,
         LeadListComponent,
         LeadSingleComponent
+    ],
+    providers: [
+        LeadService
     ]
 })
 export class LeadsModule { }

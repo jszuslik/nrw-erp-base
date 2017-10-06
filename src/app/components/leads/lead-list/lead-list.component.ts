@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {routerTransition} from '../../../router.animations';
+import {LeadService} from '../../../services/leads/lead.service';
+import {Lead} from '../../../models/lead';
 
 @Component({
     selector: 'app-lead-list',
@@ -9,9 +11,21 @@ import {routerTransition} from '../../../router.animations';
 })
 export class LeadListComponent implements OnInit {
 
-  constructor() { }
+    leads: Lead[];
+
+  constructor(private _ls: LeadService) { }
+
+  getLeads() {
+      this._ls.getLeads()
+          .subscribe(
+              (leads: Lead[]) => {
+                  this.leads = leads;
+              }
+          );
+  }
 
   ngOnInit() {
+      this.getLeads();
   }
 
 }
