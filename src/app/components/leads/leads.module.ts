@@ -4,11 +4,13 @@ import {LeadSingleComponent} from './lead-single/lead-single.component';
 import {LeadListComponent} from './lead-list/lead-list.component';
 import {LeadsComponent} from './leads.component';
 import {LeadsRoutingModule} from './leads-routing.module';
+import {PageHeaderModule} from '../../shared/modules/page-header/page-header.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        LeadsRoutingModule
+        LeadsRoutingModule,
+        PageHeaderModule
     ],
     declarations: [
         LeadsComponent,
