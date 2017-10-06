@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {routerTransition} from '../../../router.animations';
 import {LeadService} from '../../../services/leads/lead.service';
 import {Lead} from '../../../models/lead';
+import {PhonePipe} from '../../../pipes/phone.pipe';
 
 @Component({
     selector: 'app-lead-list',

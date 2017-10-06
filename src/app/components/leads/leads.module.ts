@@ -6,6 +6,7 @@ import {LeadsComponent} from './leads.component';
 import {LeadsRoutingModule} from './leads-routing.module';
 import {PageHeaderModule} from '../../shared/modules/page-header/page-header.module';
 import {LeadService} from '../../services/leads/lead.service';
+import {PhonePipe} from '../../pipes/phone.pipe';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import {LeadService} from '../../services/leads/lead.service';
     declarations: [
         LeadsComponent,
         LeadListComponent,
-        LeadSingleComponent
+        LeadSingleComponent,
+        PhonePipe
     ],
     providers: [
         LeadService

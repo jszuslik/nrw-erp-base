@@ -9,35 +9,26 @@
                 <div class="card-block table-responsive">
                     <table class="table table-hover">
                         <thead>
-                        <tr>
-                            <th><i class="fa fa-check" aria-hidden="true"></i></th>
-                            <th>Lead Name</th>
-                            <th>Company</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Lead Source</th>
-                            <th>Lead Owner</th>
-                        </tr>
+                            <tr>
+                                <th><i class="fa fa-check" aria-hidden="true"></i></th>
+                                <th>Lead Name</th>
+                                <th>Company</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Lead Source</th>
+                                <th>Lead Owner</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr *ngFor="let lead of leads">
-                            <th scope="row"><input type="checkbox" /></th>
-                            <td>{{lead.name}} <small>Id: 1</small></td>
-                            <td>Omni Resources</td>
-                            <td>joshua.szuslik@omniresources.com</td>
-                            <td>(414) 202-3939</td>
-                            <td>Website</td>
-                            <td>Joshua</td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input type="checkbox" /></th>
-                            <td>Jacob Thorton <small>Id: 2</small></td>
-                            <td>Lanex, LLC</td>
-                            <td>jacob@lanex.com</td>
-                            <td>(555) 555-5555</td>
-                            <td>Job Site</td>
-                            <td>Joshua</td>
-                        </tr>
+                            <tr *ngFor="let lead of leads">
+                                <th scope="row"><input type="checkbox" /></th>
+                                <td>{{lead.name}} <small>Id: {{lead.id}}</small></td>
+                                <td>{{lead.company}}</td>
+                                <td>{{lead.email}}</td>
+                                <td>{{lead.phone | phone}}</td>
+                                <td>{{lead.source}}</td>
+                                <td>{{lead.owner}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
