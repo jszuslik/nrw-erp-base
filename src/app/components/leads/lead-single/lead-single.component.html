@@ -2,14 +2,15 @@
     <app-page-header [pageheader]="pageheader"></app-page-header>
     <div class="row">
         <div class="col-12">
-            <table class="lead-info-table">
+            <table class="lead-info-table table table-bordered">
                 <tbody class="lead-info-table-body">
                     <tr id="lead-owner" class="lead-info-table-row">
                         <td class="lead-info-table-cell">
                             Lead Owner
                         </td>
                         <td class="lead-info-table-cell">
-                            {{lead.owner}}
+                            <app-inline-edit [(ngModel)]="lead.owner" [required]="true" [type]="'text'">
+                            </app-inline-edit>
                         </td>
                     </tr>
                     <tr id="lead-email" class="lead-info-table-row">
@@ -17,7 +18,8 @@
                             Email
                         </td>
                         <td class="lead-info-table-cell">
-                            {{lead.email}}
+                            <app-inline-edit [(ngModel)]="lead.email" [required]="true" [type]="'text'">
+                            </app-inline-edit>
                         </td>
                     </tr>
                     <tr id="lead-phone" class="lead-info-table-row">
@@ -25,7 +27,8 @@
                             Phone
                         </td>
                         <td class="lead-info-table-cell">
-                            {{lead.phone | phone}}
+                            <app-inline-edit [(ngModel)]="phone" [required]="true" [type]="'text'">
+                            </app-inline-edit>
                         </td>
                     </tr>
                     <tr id="lead-mobile" class="lead-info-table-row">
@@ -33,7 +36,8 @@
                             Mobile
                         </td>
                         <td class="lead-info-table-cell">
-                            {{lead.phone | phone}}
+                            <app-inline-edit [(ngModel)]="phone" [required]="true" [type]="'text'">
+                            </app-inline-edit>
                         </td>
                     </tr>
                     <tr id="lead-status" class="lead-info-table-row">
@@ -41,7 +45,8 @@
                             Lead Status
                         </td>
                         <td class="lead-info-table-cell">
-                            Active
+                            <app-inline-edit [(ngModel)]="lead.isActive" [required]="true" [type]="'text'">
+                            </app-inline-edit>
                         </td>
                     </tr>
                 </tbody>

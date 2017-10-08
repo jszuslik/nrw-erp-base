@@ -7,21 +7,26 @@ import {LeadsRoutingModule} from './leads-routing.module';
 import {PageHeaderModule} from '../../shared/modules/page-header/page-header.module';
 import {LeadService} from '../../services/leads/lead.service';
 import {PhonePipe} from '../../pipes/phone.pipe';
+import {InlineEditComponent} from '../shared/inline-edit/inline-edit.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
         LeadsRoutingModule,
-        PageHeaderModule
+        PageHeaderModule,
+        FormsModule
     ],
     declarations: [
         LeadsComponent,
         LeadListComponent,
         LeadSingleComponent,
-        PhonePipe
+        PhonePipe,
+        InlineEditComponent
     ],
     providers: [
-        LeadService
+        LeadService,
+        PhonePipe
     ]
 })
 export class LeadsModule { }

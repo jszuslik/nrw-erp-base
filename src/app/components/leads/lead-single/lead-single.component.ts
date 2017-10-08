@@ -4,6 +4,7 @@ import {Lead} from '../../../models/leads/lead';
 import {LeadService} from '../../../services/leads/lead.service';
 import {routerTransition} from '../../../router.animations';
 import {PageHeader} from '../../../models/shared/page-header';
+import {PhonePipe} from '../../../pipes/phone.pipe';
 
 @Component({
     selector: 'app-lead-single',
@@ -24,6 +25,7 @@ export class LeadSingleComponent implements OnInit {
         owner: '',
         isActive: false
     };
+    phone: string;
 
     pageheader: PageHeader = {
         heading: '',
@@ -40,7 +42,8 @@ export class LeadSingleComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private _ls: LeadService
+        private _ls: LeadService,
+        private _phonePipe: PhonePipe
     ) { }
 
     getLeadById(id: number) {
@@ -64,8 +67,13 @@ export class LeadSingleComponent implements OnInit {
                             active: true
                         }
                     );
+                    this.phone = this.transformPhone(this.lead.phone);
                 }
             );
+    }
+
+    transformPhone(phone: string) {
+        return this._phonePipe.transform(phone, null);
     }
 
     ngOnInit() {

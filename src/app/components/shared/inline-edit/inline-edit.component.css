@@ -1,0 +1,9 @@
+span {
+    cursor: pointer;
+}
+span span i {
+    opacity: 0;
+}
+span:hover span i {
+    opacity: 1;
+}

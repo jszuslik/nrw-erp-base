@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { ComponentBarComponent } from './components/shared/component-bar/component-bar.component';
+import { InlineEditComponent } from './components/shared/inline-edit/inline-edit.component';
+import {PhonePipe} from './pipes/phone.pipe';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
     // for development
@@ -22,6 +24,7 @@ export function HttpLoaderFactory(http: Http) {
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
