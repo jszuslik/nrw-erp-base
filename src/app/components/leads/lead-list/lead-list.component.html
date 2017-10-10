@@ -23,7 +23,7 @@
                             <tr *ngFor="let lead of leads">
                                 <th scope="row"><input type="checkbox" /></th>
                                 <td>
-                                    <strong>{{lead.name}}</strong> <small>Id: {{lead.id}}</small>
+                                    <strong>{{lead.firstName}} {{lead.lastName}}</strong> <small>Id: {{lead.id}}</small>
                                     <div class="row-actions">
                                         <span class="edit">
                                             <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/leads', lead.id]">View</button>
@@ -31,8 +31,8 @@
                                     </div>
                                 </td>
                                 <td>{{lead.company}}</td>
-                                <td>{{lead.email}}</td>
-                                <td>{{lead.phone | phone}}</td>
+                                <td>{{lead.primaryEmail}}</td>
+                                <td>{{lead.primaryPhone | phone}}</td>
                                 <td>{{lead.source}}</td>
                                 <td>{{lead.owner}}</td>
                             </tr>

@@ -5,6 +5,7 @@ import {LeadService} from '../../../services/leads/lead.service';
 import {routerTransition} from '../../../router.animations';
 import {PageHeader} from '../../../models/shared/page-header';
 import {PhonePipe} from '../../../pipes/phone.pipe';
+import {NEWLEAD} from '../../../mockdata/mockleads';
 
 @Component({
     selector: 'app-lead-single',
@@ -14,18 +15,9 @@ import {PhonePipe} from '../../../pipes/phone.pipe';
 })
 export class LeadSingleComponent implements OnInit {
 
-    lead: Lead = {
-        id: -1,
-        name: '',
-        image: '',
-        company: '',
-        email: '',
-        phone: '',
-        source: '',
-        owner: '',
-        isActive: false
-    };
-    phone: string;
+    lead: Lead = NEWLEAD;
+    primaryPhone: string;
+    mobilePhone: string;
 
     pageheader: PageHeader = {
         heading: '',
@@ -57,17 +49,18 @@ export class LeadSingleComponent implements OnInit {
                     console.error(e);
                 },
                 () => {
-                    this.pageheader.heading = this.lead.name;
+                    this.pageheader.heading = this.lead.firstName + ' ' + this.lead.lastName;
                     this.pageheader.image = this.lead.image;
                     this.pageheader.breadcrumbs.push(
                         {
-                            title: this.lead.name,
+                            title: this.lead.firstName + ' ' + this.lead.lastName,
                             icon: 'fa-address-book-o',
                             link: '',
                             active: true
                         }
                     );
-                    this.phone = this.transformPhone(this.lead.phone);
+                    this.primaryPhone = this.transformPhone(this.lead.primaryPhone);
+                    this.mobilePhone = this.transformPhone(this.lead.mobilePhone);
                 }
             );
     }

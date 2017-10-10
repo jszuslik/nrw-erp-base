@@ -1,22 +1,10 @@
 import {Base} from '../base';
+import {Contact} from '../contacts/contact';
+import {User} from '../users/user';
 
-export class Lead extends Base {
-    name: string;
-    image: string;
-    company: string;
-    email: string;
-    phone: string;
+export class Lead extends Contact {
     source: string;
-    owner: string;
+    owner: User;
+    description: string;
     lead_status: string;
-    title: string;
-    industry: string;
-    annual_revenue: string;
-    email_opt_out: boolean;
-    fax: string;
-    website: string;
-    rating: number;
-    skype_id: string;
-    twitter_handle: string;
-    secondary_email: string;
 }

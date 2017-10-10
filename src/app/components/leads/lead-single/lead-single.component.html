@@ -18,7 +18,7 @@
                             Email
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="lead.email" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="lead.primaryEmail" [required]="true" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
@@ -27,7 +27,7 @@
                             Phone
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="phone" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="primaryPhone" [required]="true" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
@@ -36,7 +36,7 @@
                             Mobile
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="phone" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="mobilePhone" [required]="true" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
