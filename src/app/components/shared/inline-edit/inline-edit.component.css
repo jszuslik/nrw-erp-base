@@ -1,3 +1,6 @@
+input {
+    width: 100%;
+}
 span {
     cursor: pointer;
 }

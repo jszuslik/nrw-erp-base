@@ -2,6 +2,7 @@ import {Address} from '../address/address';
 import {AuditableBase} from '../auditable-base';
 import {Note} from '../notes/note';
 import {Activity} from '../activities/activity';
+import {Account} from '../accounts/account';
 
 export class Contact extends AuditableBase {
     title: string;

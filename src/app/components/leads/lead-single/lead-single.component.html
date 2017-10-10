@@ -1,7 +1,7 @@
 <div [@routerTransition]>
     <app-page-header [pageheader]="pageheader"></app-page-header>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-md-4">
             <table class="lead-info-table table table-bordered">
                 <tbody class="lead-info-table-body">
                     <tr id="lead-owner" class="lead-info-table-row">
@@ -9,7 +9,7 @@
                             Lead Owner
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="lead.owner" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="lead.owner.username" [required]="false" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
@@ -18,7 +18,7 @@
                             Email
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="lead.primaryEmail" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="lead.primaryEmail" [required]="false" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
@@ -27,7 +27,7 @@
                             Phone
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="primaryPhone" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="primaryPhone" [required]="false" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
@@ -36,7 +36,7 @@
                             Mobile
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="mobilePhone" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="mobilePhone" [required]="false" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
@@ -45,12 +45,222 @@
                             Lead Status
                         </td>
                         <td class="lead-info-table-cell">
-                            <app-inline-edit [(ngModel)]="lead.isActive" [required]="true" [type]="'text'">
+                            <app-inline-edit [(ngModel)]="lead.isActive" [required]="false" [type]="'text'">
                             </app-inline-edit>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3">
+                <div class="card-header card-default">
+                    Lead Information
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <table class="lead-info-table table table-bordered">
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Lead Owner
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.owner.username" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Title
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.title" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Phone
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="primaryPhone" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Mobile
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="mobilePhone" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Lead Source
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.source" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Industry
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.company.industry" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Annual Revenue
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.company.annualRevenue" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Email Opt Out
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.email_opt_out" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Modified By
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.modifiedBy.username" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <table class="lead-info-table table table-bordered">
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Company
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.company.name" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Email
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.primaryEmail" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Fax
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.fax" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Website
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.company.website" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Lead Status
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.lead_status" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        No. of Employees
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.company.employees" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Rating
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.company.rating" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Created By
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.createdBy.username" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Skype Id
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.skypeId" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Secondary Email
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.secondaryEmail" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        LinkedIn
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.linkedIn" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Twitter
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.twitter" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
