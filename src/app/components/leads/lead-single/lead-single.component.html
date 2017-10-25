@@ -263,4 +263,42 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-3">
+                <div class="card-header card-default">
+                    Address Information
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <table class="lead-info-table table table-bordered">
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Address 1
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.address.address1" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                                <tr class="lead-info-table-row">
+                                    <td class="lead-info-table-cell">
+                                        Address 2
+                                    </td>
+                                    <td class="lead-info-table-cell">
+                                        <app-inline-edit [(ngModel)]="lead.address.address2" [required]="false" [type]="'text'">
+                                        </app-inline-edit>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-12 col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
